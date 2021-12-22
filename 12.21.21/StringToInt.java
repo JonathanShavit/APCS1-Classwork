@@ -3,6 +3,19 @@ public class StringToInt{
     System.out.println(stringToInt(args[0]) == Integer.parseInt(args[0]));
   }
   public static int stringToInt(String str){
-    return 0;
+    int ans = 0;
+    for (int i = 0; i < str.length(); i++){
+      ans+=valueOfDigit(str.charAt(i)) * Math.pow(10,str.length()-1-i);
+    }
+    //System.out.prinln(ans);
+    return ans;
+  }
+  public static int valueOfDigit(char c){
+    for (int i = 0; i < 9; i++){
+      if (c == '0'+i){
+        return i;
+      }
+    }
+    return 9;
   }
 }
