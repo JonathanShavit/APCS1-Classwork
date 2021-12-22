@@ -5,7 +5,10 @@ public class StringToInt{
   public static int stringToInt(String str){
     int ans = 0;
     for (int i = 0; i < str.length(); i++){
-      ans+=valueOfDigit(str.charAt(i)) * Math.pow(10,str.length()-1-i);
+      ans+=valueOfDigit(str.charAt(i));
+      if (i != str.length() - 1){
+        ans*=10;
+      }
     }
     //System.out.prinln(ans);
     return ans;
